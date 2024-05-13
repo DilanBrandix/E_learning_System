@@ -1,0 +1,114 @@
+<div class="mainContent">
+  <div style="width: 50%; display: flex; justify-content: center">
+    <div class="card flex justify-content-center">
+      <p-card>
+        <div>
+          <h2>Checkout</h2>
+        </div>
+        <div>
+          <p>
+            Udemy is required by law to collect applicable transaction taxes for
+            purchases made in certain tax jurisdictions.
+          </p>
+        </div>
+        <div>
+          <h2>Payment Method</h2>
+        </div>
+        <div>
+          <div>
+            <p style="font-weight: bold">Card Type*</p>
+          </div>
+          <div style="display: flex;">
+            <div class="flex align-items-center">
+              <p-radioButton
+                name="visa"
+                value="Visa"
+                [(ngModel)]="cardType"
+                inputId="type1"
+              ></p-radioButton>
+              <label for="type1" class="ml-2" style="font-weight: bold; margin-left: 0.5rem;">Debit/Credit Card</label>
+            </div>
+            <div style="margin-left: 1rem">
+              <img src="assets\visa.png" style="width: 40px" />
+            </div>
+            <div style="margin-left: 1rem">
+              <img src="assets\master.png" style="width: 40px" />
+            </div>
+          </div>
+          <div style="margin-top: 1rem">
+            <label style="font-weight: bold">Card Number*</label>
+            <input
+              type="text"
+              pInputText
+              [(ngModel)]="cardnumber"
+              style="width: 100%"
+              required
+            />
+          </div>
+          <div style="display: flex; justify-content: space-between">
+            <div style="margin-top: 1rem">
+              <label style="font-weight: bold">Expiry Month*</label>
+              <input
+                type="number"
+                pInputText
+                [(ngModel)]="cardnumber"
+                style="width: 95%"
+                required
+              />
+            </div>
+            <div style="margin-top: 1rem">
+              <label style="font-weight: bold">Expiry Year*</label>
+              <input
+                type="number"
+                pInputText
+                [(ngModel)]="cardnumber"
+                style="width: 100%"
+                required
+              />
+            </div>
+          </div>
+          <div style="display: flex;">
+            <div style="margin-top: 1rem; width: 36%;float: left; ;">
+              <label style="font-weight: bold;">CVN*</label>
+              <input
+              type="number"
+              pInputText
+              [(ngModel)]="cardnumber"
+              style="width: 100%;"
+              required
+            />
+            </div>
+            <div style=" margin-top: 1.8rem;">
+              <img src="assets\cvn.png" style="width: 75px" />
+            </div>
+          </div>
+        </div>
+        <div>
+          <p-divider align="center">
+            <div class="inline-flex align-items-center">
+              <b>Summary</b>
+            </div>
+          </p-divider>
+        </div>
+        <div style="display: flex; justify-content: space-between;" *ngFor="let card of cards">
+          <div>
+            <p style="font-weight: bold;">
+              Total Amount:
+            </p>
+          </div>
+          <div>
+            <p style="font-weight: bold;">
+              {{card.courcePrice}}
+            </p>
+          </div>
+        </div>
+        <div style="display: flex; justify-content: center;">
+          <div class="buttonDiv">
+            <button pButton class="button" label="Pay Now" ></button>
+          </div>
+        </div>
+      </p-card>
+    </div>
+  </div>
+
+</div>

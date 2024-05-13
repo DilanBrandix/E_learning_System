@@ -1,0 +1,53 @@
+.main-container{
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.sub-Container{
+  /* margin-left: 8%;
+  margin-right: 8%; */
+}
+
+h2 {
+  font-family: Hind, sans-serif;
+  color: #0e1133;
+  margin-top: 0;
+  font-weight: 700;
+  line-height: 1.2;
+  transition: all .3s ease-out 0s;
+}
+
+.section__title {
+  font-size: 40px;
+  color: #0e1133;
+  text-transform: capitalize;
+  z-index: 1;
+  margin-bottom: 3px;
+}
+.paragraph{
+  font-family: Hind, sans-serif;
+  font-size: 15px;
+}
+.course-container{
+display: grid;
+grid-template-columns: auto auto auto;
+justify-content: flex-start;
+}
+
+.footerContent{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cardContent{
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.rating{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}

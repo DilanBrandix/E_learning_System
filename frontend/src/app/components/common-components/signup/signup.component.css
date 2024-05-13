@@ -1,0 +1,64 @@
+.loginBody{
+  height: 90vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center
+}
+.card{
+    width: 30vw;
+}
+@media only screen and (max-width: 600px) {
+  .card {
+    min-width: 60vw;
+  }
+}
+
+.username{
+  margin-bottom: 4%;
+}
+
+.header{
+  font-weight: bold;
+  font-size: large;
+  text-align: center;
+  color: #7a38a7;
+}
+.header2{
+  font-weight: bold;
+  font-size: small;
+  text-align: center;
+  color: #7a38a7;
+}
+.header3{
+  font-weight:normal;
+  font-size: small;
+  text-align: center;
+  color: #7a38a7;
+}
+.buttonDiv{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.button{
+  width: 100%;
+}
+.errorMessage{
+  text-align: center;
+  color: #ee313a;
+}
+.dialog-div{
+  display: flex;
+  justify-content:center;
+}
+.userDialog{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.invalid-input {
+  border-color: red; /* Change border color to red for invalid input */
+}
+

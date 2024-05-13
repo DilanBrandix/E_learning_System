@@ -1,0 +1,53 @@
+<div class="header-content">
+  <p class="headerName">E-Learning</p>
+
+  <div class="card">
+    <p-menubar [model]="items"></p-menubar>
+  </div>
+
+  <span class="p-input-icon-left search">
+    <i class="pi pi-search"></i>
+    <input
+      [style]="{ width: '80%' }"
+      type="text"
+      pInputText
+      placeholder="Search for anything"
+    />
+  </span>
+  <p class="description"></p>
+
+  <p-button label="Teach on E-Learner" styleClass="p-button-text" *ngIf="!userService.isloggedin()"></p-button>
+
+  <p-button styleClass="p-button-rounded p-button-help p-button-text">
+    <i
+      class="pi pi-shopping-cart"
+      style="font-size: 2rem; border-width: thin"
+    ></i>
+  </p-button>
+
+  <p-button
+    styleClass="p-button-outlined"
+    label="Log in"
+    [style]="{ width: '100px' }"
+    class="header-button"
+    routerLink="login"
+    *ngIf="!userService.isloggedin()"
+  ></p-button>
+  <p-button
+    styleClass="p-button-outlined"
+    label="Sign up"
+    [style]="{ width: '100px' }"
+    class="header-button"
+    routerLink="signup"
+    *ngIf="!userService.isloggedin()"
+  ></p-button>
+  <p-button
+    icon="pi pi-user"
+    class="logout-button"
+    styleClass="p-button-rounded p-button-outlined"
+    class="profile-button"
+    *ngIf="userService.isloggedin()"
+    (click)="logout()"
+  >
+</p-button>
+</div>

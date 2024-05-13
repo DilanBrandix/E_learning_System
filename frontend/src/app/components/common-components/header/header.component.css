@@ -1,0 +1,46 @@
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: #fcfbfd;
+  color: white;
+  width: 100%;
+}
+
+.headerName {
+  order: -1;
+  color: #883cae;
+  padding-right: 1rem;
+}
+
+.description {
+  margin: 0;
+  margin-left: auto; /* Push the description to the far right */
+  font-weight: bold;
+}
+
+.header-button {
+  margin-left: 1rem; /* Add some space between the description and logout button */
+
+}
+
+.search{
+  width: 40%;
+}
+
+::ng-deep .p-menubar {
+  padding: 0.5rem 1rem;
+  background: #fcfbfd;
+  border: 0 none;
+  border-radius: 4px;
+}
+
+::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-content .p-menuitem-link .p-menuitem-text {
+  color: #883cae;
+}
+
+.profile-button {
+  margin-left: 1rem; /* Add some space between the description and logout button */
+  margin-right: 1rem;
+}

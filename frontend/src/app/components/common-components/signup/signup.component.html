@@ -1,0 +1,100 @@
+<div class="loginBody">
+  <p-card class="card">
+    <p class="header">WELCOME TO E-LEARNER</p>
+
+    <p class="header2">Create your account</p>
+
+    <div class="username">
+      <input
+        type="text"
+        pInputText
+        [(ngModel)]="firstName"
+        placeholder="First Name"
+        style="width: 100%;"
+        required
+      />
+    </div>
+    <div class="username">
+      <input
+        type="text"
+        pInputText
+        [(ngModel)]="lastName"
+        placeholder="Last Name"
+        style="width: 100%;"
+        required
+      />
+    </div>
+    <div class="username">
+      <input
+        type="email"
+        pInputText
+        [(ngModel)]="email"
+        placeholder="Email"
+        style="width: 100%;"
+        required
+      />
+    </div>
+    <div class="username">
+      <p-password
+      id="password1"
+      type="password"
+      class="w-full"
+      [feedback]="false"
+      placeholder="Password"
+      styleClass="p-password p-component p-inputwrapper p-input-icon-right"
+      [style]="{ width: '100%' }"
+      [inputStyle]="{ width: '100%' }"
+      [toggleMask]="true"
+      [(ngModel)]="password"
+      #passwordInput="ngModel"
+      (blur)="passwordInputTouched = true"
+      [ngClass]="{
+        'invalid-input':
+        passwordInput.invalid &&
+          (passwordInputTouched || passwordInput.dirty)
+      }"
+    ></p-password>
+      <div
+        *ngIf="
+          passwordInput.invalid &&
+          (passwordInput.dirty || passwordInput.touched)
+        "
+        class="text-danger"
+      >
+        <p>Password is required.</p>
+      </div>
+    </div>
+    <div>
+      <p class="errorMessage" *ngIf="errorStatus">{{ errorMessage }}</p>
+    </div>
+    <div class="buttonDiv">
+      <button pButton class="button" label="Sign up" (click)="signup()"></button>
+    </div>
+    <p class="header3">Already have an account?<a class="header3" routerLink="login"> Sign in</a></p>
+    <div class="dialog-div">
+      <p-dialog
+        [(visible)]="visible"
+        [modal]="true"
+        [draggable]="false"
+        [resizable]="false"
+        [closable]="false"
+        class="userDialog"
+      >
+        <div>
+          <p-header>
+            <i
+              class="pi pi-check-circle"
+              style="font-size: 3.5rem; color: #7a38a7"
+            ></i>
+          </p-header>
+        </div>
+        <div>
+          <p class="dialogFont">{{ warningMessage }}</p>
+        </div>
+        <div>
+          <p-button label="Okay" (click)="closeDialog()"></p-button>
+        </div>
+      </p-dialog>
+    </div>
+  </p-card>
+</div>

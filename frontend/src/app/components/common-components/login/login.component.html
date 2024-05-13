@@ -1,0 +1,78 @@
+<div class="loginBody">
+  <p-card class="card">
+    <p class="header">WELCOME TO E-LEARNER</p>
+    <p class="header2">Sign in with your credentials</p>
+    <div class="username">
+      <span class="p-input-icon-right usernameSpan">
+        <i class="pi pi-user"></i>
+        <input
+          type="text"
+          pInputText
+          [(ngModel)]="username"
+          placeholder="Username"
+          style="width: 100%;"
+        />
+      </span>
+    </div>
+    <div class="username">
+      <p-password
+        id="password1"
+        type="password"
+        class="w-full"
+        [feedback]="false"
+        placeholder="Password"
+        styleClass="p-password p-component p-inputwrapper p-input-icon-right"
+        [style]="{ width: '100%' }"
+        [inputStyle]="{ width: '100%' }"
+        [toggleMask]="true"
+        [(ngModel)]="password"
+      ></p-password>
+    </div>
+    <div>
+      <p class="errorMessage" *ngIf="errorStatus">{{ errorMessage }}</p>
+    </div>
+    <div class="buttonDiv">
+      <button
+        pButton
+        label="Sign in"
+        class="button"
+        (click)="onSubmit()"
+      ></button>
+    </div>
+    <div>
+      <p-divider align="center">
+        <div class="inline-flex align-items-center">
+          <b>Or</b>
+        </div>
+      </p-divider>
+    </div>
+    <div class="buttonDiv">
+      <button pButton class="button" label="Sign up" (click)="onSignup()"></button>
+    </div>
+    <div class="dialog-div">
+      <p-dialog
+        [(visible)]="visible"
+        [modal]="true"
+        [draggable]="false"
+        [resizable]="false"
+        [closable]="false"
+        class="userDialog"
+      >
+        <div>
+          <p-header>
+            <i
+              class="pi pi-exclamation-circle"
+              style="font-size: 3.5rem; color: #326fd1"
+            ></i>
+          </p-header>
+        </div>
+        <div>
+          <p class="dialogFont">{{ warningMessage }}</p>
+        </div>
+        <div>
+          <p-button label="Okay" (click)="closeDialog()"></p-button>
+        </div>
+      </p-dialog>
+    </div>
+  </p-card>
+</div>

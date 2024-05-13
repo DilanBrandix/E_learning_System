@@ -1,0 +1,89 @@
+<div class="main-container">
+  <div class="sub-Container">
+    <div style="display: flex; justify-content: space-between;">
+      <div>
+        <h2 class="section__title">Manage Course Details</h2>
+      </div>
+      <div>
+        <p-button label="Add Courses" styleClass="p-button-outlined p-button-help"></p-button>
+      </div>
+    </div>
+    <div>
+      <p class="paragraph">
+        Edit Course Details and Lecture Materials
+      </p>
+    </div>
+    <div class="course-container">
+      <div
+        style="margin-right: 2rem; margin-bottom: 2rem"
+        *ngFor="let card of cards"
+      >
+        <div class="card flex justify-content-center">
+          <p-card
+            header="{{ card.cardHeader }}"
+            subheader="{{ card.cardSubHeading }}"
+            [style]="{ width: '360px' }"
+          >
+            <ng-template pTemplate="header">
+              <img alt="Card" src="{{ card.imgPath }}" />
+            </ng-template>
+            <div class="cardContent">
+              <div>
+                <i class="pi pi-book" style="font-size: large"></i>
+              </div>
+              <div>
+                <p
+                  style="
+                    margin-left: 0.5rem;
+                    font-size: 22px;
+                    margin-bottom: 2rem;
+                  "
+                >
+                  {{ card.numberofLessons }}
+                </p>
+              </div>
+            </div>
+            <div class="rating">
+              <div style="margin-right: 0.5rem">
+                {{ card.rating }}
+              </div>
+              <div>
+                <p-rating
+                  [(ngModel)]="card.ratingValue"
+                  [cancel]="false"
+                ></p-rating>
+              </div>
+            </div>
+            <div>
+              <p-divider align="center">
+                <div class="inline-flex align-items-center"></div>
+              </p-divider>
+            </div>
+            <div class="footerContent">
+              <div>
+                <p-button
+                label="Edit"
+                icon="pi pi-pencil"
+                iconPos="left"
+                [style]="{ width: '100px' }"
+                (click)="editcourse(card.courseId)"
+              >
+              </p-button>
+              </div>
+              <div>
+                <p-button
+                  label="Delete"
+                  icon="pi pi-trash"
+                  iconPos="left"
+                  [style]="{ width: '100px' }"
+                  (click)="deletecourse(card.courseId)"
+                >
+                </p-button>
+              </div>
+            </div>
+          </p-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
