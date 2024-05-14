@@ -58,4 +58,14 @@ export class CoursesService {
 
     return courseDetails;
   }
+
+  async deleteCourses(courseID) {
+    const course = await courseID;
+    return course;
+  }
+
+  async updateCourses(courseID, courseD) {
+    const course = await courseID;
+    return course;
+  }
 }

@@ -1,4 +1,12 @@
-import { Controller, Post, Body, Get } from '@nestjs/common';
+import {
+  Controller,
+  Post,
+  Body,
+  Get,
+  Put,
+  Delete,
+  Param,
+} from '@nestjs/common';
 import { CoursesService } from 'src/courses/services/courses/courses.service';
 import { courseDetails } from 'src/courses/model/course.interface';
 
@@ -19,5 +27,18 @@ export class CoursesController {
   @Post('getOneCourses')
   async GetoneCourses(@Body() data: any): Promise<any> {
     return this.courseService.getoneCourses(data.courseid);
+  }
+
+  @Delete('deleteCourses/:id')
+  deleteCourse(@Param('id') courseId: string): Promise<any> {
+    return this.courseService.deleteCourses(courseId);
+  }
+
+  @Put('updateCourses/:id')
+  updateCourse(
+    @Param('id') courseId: string,
+    @Body() CourseData: courseDetails,
+  ): Promise<any> {
+    return this.courseService.updateCourses(courseId, CourseData);
   }
 }
