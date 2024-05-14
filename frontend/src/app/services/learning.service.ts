@@ -22,5 +22,11 @@ export class LearningService {
     return this.http.post<any>(`${this.apiUrl}/courses/getOneCourses`,data);
   }
 
+  deleteCourses(courseid:any) {
+    return this.http.delete<any>(`${this.apiUrl}/courses/deleteCourses/:`+courseid);
+  }
 
+  updateCourses(courseid:any,courseDetails:any) {
+    return this.http.put<any>(`${this.apiUrl}/courses/'updateCourses/:id`+courseid,courseDetails);
+  }
 }
